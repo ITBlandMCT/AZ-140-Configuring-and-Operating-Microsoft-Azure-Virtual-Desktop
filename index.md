@@ -8,9 +8,25 @@ layout: home
 
 Hyperlinks to each of the lab exercises and demos are listed below.
 
-## Labs
+## Labs \(AD DS\)
 
 {% assign labs = site.pages | where_exp:"page", "page.url contains '_ADDS'" %}
+| Module | Lab |
+| --- | --- | 
+{% for activity in labs  %}| {{ activity.lab.module }} | [{{ activity.lab.title }}{% if activity.lab.type %} - {{ activity.lab.type }}{% endif %}]({{ site.github.url }}{{ activity.url }}) |
+{% endfor %}
+
+## Labs \(Entra DS\)
+
+{% assign labs = site.pages | where_exp:"page", "page.url contains '_AADDS'" %}
+| Module | Lab |
+| --- | --- | 
+{% for activity in labs  %}| {{ activity.lab.module }} | [{{ activity.lab.title }}{% if activity.lab.type %} - {{ activity.lab.type }}{% endif %}]({{ site.github.url }}{{ activity.url }}) |
+{% endfor %}
+
+## Labs \(Entra ID\)
+
+{% assign labs = site.pages | where_exp:"page", "page.url contains '\Instructions\Labs_EntraID'" %}
 | Module | Lab |
 | --- | --- | 
 {% for activity in labs  %}| {{ activity.lab.module }} | [{{ activity.lab.title }}{% if activity.lab.type %} - {{ activity.lab.type }}{% endif %}]({{ site.github.url }}{{ activity.url }}) |
